@@ -173,7 +173,7 @@ For example:
 https://basescan.org/address/0x1234567890123456789012345678901234567890
 ```
 
-This will show you the contract's transactions, token transfers, and other on-chain activity.
+This will show you the contract's transactions, token transfers, and other onchain activity.
 
 ## Contract Verification
 
