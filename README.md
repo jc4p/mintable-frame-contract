@@ -1,4 +1,4 @@
-# Farcaster NFT Contract
+# Mintable Frame Contract
 
 This project contains a simple ERC721 NFT contract designed for Farcaster frames that sends payments directly to the creator.
 
@@ -69,6 +69,23 @@ Replace:
 - `your_private_key_without_0x_prefix` with your wallet's private key (without the 0x prefix)
 
 **Important**: Never commit your `.env` file to version control. The `.gitignore` file should already be set up to ignore it.
+
+### Setting up the BASE_URI
+
+Before deployment, update the `BASE_URI` in both the contract and test file to point to your server:
+
+1. Set up the server (available at [github.com/jc4p/mintable-frame-server](https://github.com/jc4p/mintable-frame-server))
+2. Update the `BASE_URI` in `src/FarcasterNFT.sol` to be your server URL + `/tokens/`
+3. Update the `BASE_URI` in `test/FarcasterNFT.t.sol` to match the same value
+
+Example:
+```solidity
+// In src/FarcasterNFT.sol
+string public constant BASE_URI = "https://your-server-url.com/tokens/";
+
+// In test/FarcasterNFT.t.sol
+string constant BASE_URI = "https://your-server-url.com/tokens/";
+```
 
 ### Source the environment variables
 
